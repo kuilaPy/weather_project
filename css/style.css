@@ -1,0 +1,135 @@
+#search {
+    border-radius: 20px;
+}
+
+#sidebar_middle {
+    height: 20vh;
+    margin-bottom: 200px;
+}
+
+#sidebar {
+    height: 100vh;
+    padding: 25px;
+}
+
+#weather_main_heading {
+    padding-left: 28px;
+    padding-top: 25px;
+}
+
+a {
+    color: black;
+    font-size: 20px;
+
+}
+
+.home {
+    color: #CA4E79;
+    font-size: 25px;
+}
+
+.cloud {
+    color: #ECB390;
+    font-size: 30px;
+}
+
+#toggle {
+    padding-left: 130px;
+}
+
+#p-con {
+    background-color: #f5f4ecf0;
+    border-radius: 30px;
+}
+
+#midlle content {
+    margin-top: 54px;
+    margin-bottom: 200px;
+}
+
+#main_dashboard {
+    height: 210px;
+    width: 650px;
+    background-color: #FFB4B4;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    margin-right: 20px;
+    margin-left: 15px;
+}
+
+#card_main_dashboard {
+    border: 0;
+    background-color: #f5f4ecf0;
+}
+
+.col-md-3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+.card-title {
+    padding-top: 7px;
+    padding-left: 7px;
+}
+
+#card_weather_satus {
+    color: grey;
+    margin-top: opx;
+    font-size: 15px;
+}
+
+#card_air {
+    font-size: 10px;
+    margin-bottom: 0px;
+    margin-top: 15px;
+}
+
+#card_air_img {
+    height: 30px;
+    width: 15px
+}
+
+#card_humidity_img {
+    height: 15px;
+    width: 17px
+}
+
+#card_day-weather {
+    height: 35px;
+    width: 35px;
+    margin-bottom: 0px;
+}
+
+#calendar_img {
+    height: 295px;
+    width: 290px;
+    background-color: #FFB4B4;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+#subscribe_img {
+    height: 65px;
+    width: 290px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+#add_city_img {
+    height: 130px;
+    width: 290px;
+    background-color: #FFB4B4;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+#download_app_img {
+    height: 185px;
+    width: 290px;
+    background-color: #FFB4B4;
+    border-radius: 10px;
+    margin: 20px;
+}
