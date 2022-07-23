@@ -10,6 +10,9 @@
 #sidebar {
     height: 100vh;
     padding: 25px;
+    background-color: #f0efe6bd;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
 }
 
 #weather_main_heading {
