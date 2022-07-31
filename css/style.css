@@ -10,9 +10,7 @@
 #sidebar {
     height: 100vh;
     padding: 25px;
-    background-color: #f0efe6bd;
-    border-bottom-left-radius: 30px;
-    border-top-left-radius: 30px;
+
 }
 
 #weather_main_heading {
@@ -24,6 +22,11 @@ a {
     color: black;
     font-size: 20px;
 
+}
+
+input {
+    padding-left: 10px;
+    height: 36px;
 }
 
 .home {
@@ -43,6 +46,9 @@ a {
 #p-con {
     background-color: #f5f4ecf0;
     border-radius: 30px;
+
+
+
 }
 
 #midlle content {
@@ -59,6 +65,10 @@ a {
     margin-bottom: 15px;
     margin-right: 20px;
     margin-left: 15px;
+}
+
+.col-md-8 {
+    padding-left: 0%;
 }
 
 #card_main_dashboard {
@@ -104,6 +114,10 @@ a {
     height: 35px;
     width: 35px;
     margin-bottom: 0px;
+}
+
+#right_side {
+    padding-left: 33px;
 }
 
 #calendar_img {

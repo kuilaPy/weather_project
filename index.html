@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 
 <body>
@@ -32,7 +31,7 @@
                     <div class="d-flex align-items-center ">
                         <div id="weather_main_heading">
                             <h4>Weather Forecasts</h4>
-                            <p>saturday 26, December 2020</p>
+                            <p id="date">saturday 26, December 2020</p>
                         </div>
 
                         <div style="margin-left:222px;">
@@ -63,9 +62,14 @@
                                 <div class="card" id="card_main_dashboard"><img
                                         src="images/undraw_best_place_re_lne9.svg" alt="loading..." id="main_dashboard">
                                     <div class="card-img-overlay">
-                                        <h5 style="padding-top: 30px;padding-left: 25px;margin-bottom: 4px;">MECCA</h5>
-                                        <p style="padding-left:25px;color: rgba(62, 61, 61, 0.6);">Saudi Arabia</p>
-                                        <p style="font-size:60px ;padding:25px;color: rgba(29, 28, 28, 0.604);">32°</p>
+                                        <h5 style="padding-top: 30px;padding-left: 25px;margin-bottom: 4px;" id="city">
+                                            MECCA</h5>
+                                        <p style="padding-left:25px;color: rgba(62, 61, 61, 0.6);" id="country">Saudi
+                                            Arabia</p>
+                                        <p><span id="today_temp"
+                                                style="font-size:60px ;padding:25px;color: rgba(29, 28, 28, 0.604);padding-right: 5px;">32</span>
+                                            °C
+                                        </p>
 
                                     </div>
                                 </div>
@@ -298,13 +302,15 @@
                                             <tr>
                                                 <td style="font-size: 15px; padding-left: 10px;padding-bottom: 10px;">
                                                     <img src="images/up arrow.jpg" alt=""
-                                                        style="height:35px;width: 35px;">5:50am
+                                                        style="height:35px;width: 35px;"><span
+                                                        id="sunrise">5:50am</span>
 
 
                                                 </td>
                                                 <td style="font-size: 15px;padding-bottom: 10px;">
                                                     <img src="images/down arrow.png" alt=" "
-                                                        style="height:35px;width: 35px;">5:25pm
+                                                        style="height:35px;width: 35px;"> <span
+                                                        id="sunset">5:25pm</span>
                                                 </td>
                                             </tr>
 
@@ -327,7 +333,7 @@
 
                         </div>
                         <!-- RIGHT SIDE DEVITION -->
-                        <div class="col-md-4">
+                        <div class="col-md-4" id="right_side">
 
                             <div class="row">
                                 <img src="images/120693177-july-2020-year-template-calendar-2020-desk-calendar-design-pink-flower-concept-for-cosmetics-beauty-.webp"
@@ -358,6 +364,8 @@
         </div>
     </div>
     </div>
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script src="/index.js"></script>
 </body>
 
 </html>
