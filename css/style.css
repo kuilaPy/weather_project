@@ -88,13 +88,13 @@ input {
     padding-left: 7px;
 }
 
-#card_weather_satus {
-    color: grey;
+.card_weather_satus {
+    color: rgb(205, 53, 53);
     margin-top: opx;
-    font-size: 15px;
+    font-size: 50px;
 }
 
-#card_air {
+.card_air {
     font-size: 10px;
     margin-bottom: 0px;
     margin-top: 15px;
@@ -110,9 +110,9 @@ input {
     width: 17px
 }
 
-#card_day-weather {
-    height: 35px;
-    width: 35px;
+.card_day-weather {
+    height: 40px;
+    width: 40px;
     margin-bottom: 0px;
 }
 
