@@ -29,7 +29,7 @@ input.addEventListener("keypress", function (event) {
             return response.json();
         }).then((data) => {
             weather_info(data)
-        })
+        }).catch((error) => alert("Invalid City Name!"));
     }
 });
 
@@ -39,97 +39,26 @@ function weather_info_link2(lat, lon) {
     fetch(url2).then((response) => {
         return response.json();
     }).then((data) => {
-        weather_info_1day(data);
-        weather_info_2day(data);
-        weather_info_3day(data);
-        weather_info_4day(data);
-        weather_info_5day(data);
-        weather_info_6day(data);
-        weather_info_7day(data);
+
+        var daily_data = data.daily;
+        console.log(daily_data);
+        for (const i in daily_data) {
+            weather_info_day(data, i)
+        }
+
+
     })
 }
-function weather_info_1day(d2) {
-    const event = new Date(d2.daily[0].dt * 1000);
-    const options = { weekday: 'long' };
-    const icon = (d2.daily[0].weather[0].icon);
-    var intvalue = Math.round(d2.daily[0].temp.day);
-    document.getElementById('day_1').innerText = event.toLocaleDateString(undefined, options);
-    document.getElementById('day_1_weather_staus').innerText = d2.daily[0].weather[0].main
-    document.getElementById('day_1_airflow').innerText = d2.daily[0].wind_speed
-    document.getElementById('day_1_humidity').innerText = d2.daily[0].humidity
-    document.getElementById('day_1_tem').innerText = intvalue
-    document.getElementById('day_1_icon').innerHTML = `<img src ="https://raw.githubusercontent.com/yuvraaaj/openweathermap-api-icons/master/icons/${icon}.png" alt="loding" class="card_day-weather">`
-}
-function weather_info_2day(d2) {
-    const event = new Date(d2.daily[1].dt * 1000);
-    const options = { weekday: 'long' };
-    const icon = (d2.daily[1].weather[0].icon);
-    var intvalue = Math.round(d2.daily[1].temp.day);
-    document.getElementById('day_2').innerText = event.toLocaleDateString(undefined, options);
-    document.getElementById('day_2_weather_staus').innerText = d2.daily[1].weather[0].main
-    document.getElementById('day_2_airflow').innerText = d2.daily[1].wind_speed
-    document.getElementById('day_2_humidity').innerText = d2.daily[1].humidity
-    document.getElementById('day_2_tem').innerText = intvalue
-    document.getElementById('day_2_icon').innerHTML = `<img src ="https://raw.githubusercontent.com/yuvraaaj/openweathermap-api-icons/master/icons/${icon}.png" alt="loding" class="card_day-weather">`
-}
-function weather_info_3day(d2) {
-    const event = new Date(d2.daily[2].dt * 1000);
-    const options = { weekday: 'long' };
-    const icon = (d2.daily[2].weather[0].icon);
-    var intvalue = Math.round(d2.daily[2].temp.day);
-    document.getElementById('day_3').innerText = event.toLocaleDateString(undefined, options);
-    document.getElementById('day_3_weather_staus').innerText = d2.daily[2].weather[0].main
-    document.getElementById('day_3_airflow').innerText = d2.daily[2].wind_speed
-    document.getElementById('day_3_humidity').innerText = d2.daily[2].humidity
-    document.getElementById('day_3_tem').innerText = intvalue
-    document.getElementById('day_3_icon').innerHTML = `<img src ="https://raw.githubusercontent.com/yuvraaaj/openweathermap-api-icons/master/icons/${icon}.png" alt="loding" class="card_day-weather">`
-}
-function weather_info_4day(d2) {
-    const event = new Date(d2.daily[3].dt * 1000);
-    const options = { weekday: 'long' };
-    const icon = (d2.daily[3].weather[0].icon);
-    var intvalue = Math.round(d2.daily[3].temp.day);
-    document.getElementById('day_4').innerText = event.toLocaleDateString(undefined, options);
-    document.getElementById('day_4_weather_staus').innerText = d2.daily[3].weather[0].main
-    document.getElementById('day_4_airflow').innerText = d2.daily[3].wind_speed
-    document.getElementById('day_4_humidity').innerText = d2.daily[3].humidity
-    document.getElementById('day_4_tem').innerText = intvalue
-    document.getElementById('day_4_icon').innerHTML = `<img src ="https://raw.githubusercontent.com/yuvraaaj/openweathermap-api-icons/master/icons/${icon}.png" alt="loding" class="card_day-weather">`
-}
-function weather_info_5day(d2) {
-    const event = new Date(d2.daily[4].dt * 1000);
-    const options = { weekday: 'long' };
-    const icon = (d2.daily[4].weather[0].icon);
-    var intvalue = Math.round(d2.daily[4].temp.day);
-    document.getElementById('day_5').innerText = event.toLocaleDateString(undefined, options);
-    document.getElementById('day_5_weather_staus').innerText = d2.daily[4].weather[0].main
-    document.getElementById('day_5_airflow').innerText = d2.daily[4].wind_speed
-    document.getElementById('day_5_humidity').innerText = d2.daily[4].humidity
-    document.getElementById('day_5_tem').innerText = intvalue
-    document.getElementById('day_5_icon').innerHTML = `<img src ="https://raw.githubusercontent.com/yuvraaaj/openweathermap-api-icons/master/icons/${icon}.png" alt="loding" class="card_day-weather">`
-}
-function weather_info_6day(d2) {
-    const event = new Date(d2.daily[5].dt * 1000);
-    const options = { weekday: 'long' };
-    const icon = (d2.daily[5].weather[0].icon);
-    var intvalue = Math.round(d2.daily[5].temp.day);
-    document.getElementById('day_6').innerText = event.toLocaleDateString(undefined, options);
-    document.getElementById('day_6_weather_staus').innerText = d2.daily[5].weather[0].main
-    document.getElementById('day_6_airflow').innerText = d2.daily[5].wind_speed
-    document.getElementById('day_6_humidity').innerText = d2.daily[5].humidity
-    document.getElementById('day_6_tem').innerText = intvalue
-    document.getElementById('day_6_icon').innerHTML = `<img src ="https://raw.githubusercontent.com/yuvraaaj/openweathermap-api-icons/master/icons/${icon}.png" alt="loding" class="card_day-weather">`
 
-}
-function weather_info_7day(d2) {
-    const event = new Date(d2.daily[6].dt * 1000);
+function weather_info_day(d2, i) {
+    const event = new Date(d2.daily[i].dt * 1000);
     const options = { weekday: 'long' };
-    const icon = (d2.daily[6].weather[0].icon);
-    var intvalue = Math.round(d2.daily[6].temp.day);
-    document.getElementById('day_7').innerText = event.toLocaleDateString(undefined, options);
-    document.getElementById('day_7_weather_staus').innerText = d2.daily[6].weather[0].main
-    document.getElementById('day_7_airflow').innerText = d2.daily[6].wind_speed
-    document.getElementById('day_7_humidity').innerText = d2.daily[6].humidity
-    document.getElementById('day_7_tem').innerText = intvalue
-    document.getElementById('day_7_icon').innerHTML = `<img src ="https://raw.githubusercontent.com/yuvraaaj/openweathermap-api-icons/master/icons/${icon}.png" alt="loding" class="card_day-weather">`
+    const icon = (d2.daily[i].weather[0].icon);
+    var intvalue = Math.round(d2.daily[i].temp.day);
+    document.getElementsByClassName('day')[i].innerHTML = event.toLocaleDateString(undefined, options)
+    document.getElementsByClassName('day_weather_staus')[i].innerText = d2.daily[i].weather[0].main
+    document.getElementsByClassName('day_airflow')[i].innerText = d2.daily[i].wind_speed
+    document.getElementsByClassName('day_humidity')[i].innerText = d2.daily[i].humidity
+    document.getElementsByClassName('day_tem')[i].innerText = intvalue
+    document.getElementsByClassName('day_icon')[i].innerHTML = `<img src ="https://raw.githubusercontent.com/yuvraaaj/openweathermap-api-icons/master/icons/${icon}.png" alt="loding" class="card_day-weather">`
 }
