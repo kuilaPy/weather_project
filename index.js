@@ -34,7 +34,7 @@ input.addEventListener("keypress", function (event) {
 });
 
 function weather_info_link2(lat, lon) {
-    api_key_2 = "49cc8c821cd2aff9af04c9f98c36eb74"
+    api_key_2 = "7899f545cf22a5512d68a9d8b7659733"
     var url2 = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely&units=metric&appid=${api_key_2}`
     fetch(url2).then((response) => {
         return response.json();
